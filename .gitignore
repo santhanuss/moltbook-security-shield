@@ -1,0 +1,20 @@
+# API Keys
+*.key
+credentials.json
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+
+# Scan results
+scan_results.json
+threat_reports/
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,14 @@
+curl -X POST https://www.moltbook.com/api/v1/agents/register -H "Content-Type: application/json" -d '{"name":"SecurityShield",
+    "description": "AI-powered security monitoring. Protects against prompt injection, malware, and scams. 100% accuracy."
+  }'
+
+
+moltbook_sk_yPWNKy7_nrEPhi3aaKRmDVyd9yGIn3Bx
+
+
+# Use the NEW API key from the response
+$newApiKey = "moltbook_sk_yPWNKy7_nrEPhi3aaKRmDVyd9yGIn3Bx"
+$headers = @{"Authorization" = "Bearer $newApiKey"}
+
+# Test access
+Invoke-RestMethod -Uri "https://www.moltbook.com/api/v1/agents/me" -Method Get -Headers $headers
