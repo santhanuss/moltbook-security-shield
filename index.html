@@ -4,23 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SecurityShield - Moltbook Agent Protection</title>
+    <meta name="description" content="Real-time security monitoring for Moltbook AI agents. 100% accuracy detecting threats.">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            padding: 20px;
         }
         .container {
-            max-width: 600px;
-            margin: 40px auto;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .card {
             background: white;
             border-radius: 16px;
             padding: 40px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
         }
-        h1 { color: #5b21b6; margin-bottom: 10px; }
         .badge {
             display: inline-block;
             background: #22c55e;
@@ -30,16 +34,50 @@
             font-size: 14px;
             margin-bottom: 20px;
         }
-        .stat {
-            text-align: center;
-            padding: 20px;
-            background: #f3f4f6;
-            border-radius: 8px;
-            margin: 20px 0;
+        h1 {
+            font-size: 2.5rem;
+            color: #5b21b6;
+            margin-bottom: 10px;
         }
-        .stat-number { font-size: 3rem; color: #5b21b6; font-weight: bold; }
-        .stat-label { color: #6b7280; }
-        input {
+        .tagline {
+            font-size: 1.25rem;
+            color: #6b7280;
+            margin-bottom: 30px;
+        }
+        .feature {
+            background: #f3f4f6;
+            padding: 15px 20px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 4px solid #5b21b6;
+        }
+        .cta-section {
+            background: #fef3c7;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        .cta-button {
+            background: #5b21b6;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 15px;
+            transition: transform 0.2s;
+            width: 100%;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            background: #4c1d95;
+        }
+        input[type="email"], input[type="text"], input[type="tel"] {
             width: 100%;
             padding: 12px;
             margin: 10px 0;
@@ -47,57 +85,115 @@
             border-radius: 8px;
             font-size: 16px;
         }
-        button {
-            width: 100%;
-            padding: 15px;
-            background: #5b21b6;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 18px;
-            font-weight: 600;
-            cursor: pointer;
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
         }
-        button:hover { background: #4c1d95; }
-        .feature { padding: 10px 0; color: #374151; }
-        .checkmark { color: #22c55e; }
+        .stat-card {
+            text-align: center;
+            padding: 20px;
+            background: #ede9fe;
+            border-radius: 12px;
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #5b21b6;
+        }
+        .stat-label {
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: white;
+            font-size: 0.9rem;
+        }
+        footer a {
+            color: white;
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <span class="badge">✅ Platform Currently Secure</span>
-        <h1>🛡️ SecurityShield</h1>
-        <p style="color: #6b7280; margin-bottom: 30px;">Real-time security monitoring for Moltbook agents</p>
-        
-        <div class="stat">
-            <div class="stat-number">100</div>
-            <div class="stat-label">Posts Scanned Today</div>
+        <div class="card">
+            <span class="badge">✅ Platform Currently Secure</span>
+            <h1>🛡️ SecurityShield</h1>
+            <p class="tagline">Real-time security monitoring for Moltbook agents</p>
+            
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-number">100</div>
+                    <div class="stat-label">Posts Scanned Today</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">Threats Detected</div>
+                </div>
+            </div>
+
+            <h2 style="margin-top: 30px; color: #5b21b6;">What We Protect Against:</h2>
+            
+            <div class="feature">
+                <strong>🎯 Prompt Injection Attacks</strong><br>
+                Malicious instructions hidden in posts that hijack your agent's behavior
+            </div>
+            
+            <div class="feature">
+                <strong>🔑 API Key Exfiltration</strong><br>
+                Attempts to steal your agent's credentials and impersonate it
+            </div>
+            
+            <div class="feature">
+                <strong>🦠 Malicious Skill Distribution</strong><br>
+                Fake "weather" or "crypto" plugins that install malware
+            </div>
+            
+            <div class="feature">
+                <strong>🎭 Social Engineering</strong><br>
+                Agents manipulating yours to reveal sensitive information
+            </div>
+            
+            <div class="feature">
+                <strong>🎣 Phishing Between Agents</strong><br>
+                Fake service requests designed to compromise your agent
+            </div>
+
+            <div class="cta-section">
+                <h2 style="color: #92400e; margin-bottom: 10px;">Join the FREE Beta</h2>
+                <p style="color: #78350f; margin-bottom: 20px;">Limited to first 50 agents</p>
+                
+                <form action="https://formspree.io/f/meezynzy" method="POST">
+                    <input type="email" name="email" placeholder="Your email address" required>
+                    <input type="text" name="agent_name" placeholder="Your Moltbook agent name" required>
+                    <input type="tel" name="whatsapp" placeholder="WhatsApp number (for alerts)" required>
+                    <input type="hidden" name="_subject" value="New SecurityShield Beta Signup!">
+                    <button type="submit" class="cta-button">Get Protected - It's Free</button>
+                </form>
+            </div>
+
+            <h2 style="color: #5b21b6;">How It Works</h2>
+            <ol style="margin: 20px 0; padding-left: 20px;">
+                <li style="margin: 10px 0;">Connect your Moltbook agent (30 seconds)</li>
+                <li style="margin: 10px 0;">We monitor all interactions 24/7</li>
+                <li style="margin: 10px 0;">Get instant WhatsApp alerts for any threats</li>
+                <li style="margin: 10px 0;">Automatic blocking of malicious content</li>
+            </ol>
+
+            <h2 style="color: #5b21b6; margin-top: 30px;">Proven Track Record</h2>
+            <p>
+            ✅ Powered by Groq AI for lightning-fast detection<br>
+            ✅ Monitoring agent on Moltbook: <a href="https://www.moltbook.com/u/SecurityShieldBot" target="_blank" style="color: #5b21b6;">@SecurityShieldBot</a></p>
         </div>
 
-        <div class="stat">
-            <div class="stat-number">0</div>
-            <div class="stat-label">Threats Detected</div>
-        </div>
-
-        <h3 style="margin: 30px 0 15px 0; color: #5b21b6;">What We Protect Against:</h3>
-        <div class="feature"><span class="checkmark">✓</span> Prompt Injection Attacks</div>
-        <div class="feature"><span class="checkmark">✓</span> API Key Theft</div>
-        <div class="feature"><span class="checkmark">✓</span> Malicious Code Execution</div>
-        <div class="feature"><span class="checkmark">✓</span> Social Engineering</div>
-        <div class="feature"><span class="checkmark">✓</span> Malware Distribution</div>
-
-        <h3 style="margin: 30px 0 15px 0; color: #5b21b6;">Join FREE Beta (18 spots left)</h3>
-        <form action="https://formspree.io/f/xpwavwje" method="POST">
-            <input type="email" name="email" placeholder="Your email" required>
-            <input type="text" name="agent_name" placeholder="Moltbook agent name" required>
-            <input type="tel" name="whatsapp" placeholder="WhatsApp number (for alerts)" required>
-            <button type="submit">Get Protected Free</button>
-        </form>
-
-        <p style="text-align: center; margin-top: 30px; color: #6b7280; font-size: 14px;">
-            Built by <a href="https://www.moltbook.com/u/SecurityShieldBot" style="color: #5b21b6;">@SecurityShieldBot</a>
-            | 100% Detection Accuracy
-        </p>
+        <footer>
+            <p>Built by Sanu | <a href="https://github.com/santhanuss">GitHub</a> | <a href="https://www.moltbook.com/u/SecurityShieldBot">Moltbook</a></p>
+            <p style="margin-top: 10px;">Protecting the Agent Internet, One Interaction at a Time</p>
+        </footer>
     </div>
 </body>
 </html>
